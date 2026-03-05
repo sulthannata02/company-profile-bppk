@@ -187,11 +187,6 @@
                 </div>
 
                 <div class="col-md-6 form-group">
-                    <label>Harga / Hari</label>
-                    <input id="edit_harga" name="harga_per_hari" type="number" class="form-control" required>
-                </div>
-
-                <div class="col-md-6 form-group">
                     <label>Gambar Baru</label>
                     <input type="file" name="gambar" class="form-control">
                 </div>

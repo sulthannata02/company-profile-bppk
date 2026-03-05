@@ -64,7 +64,6 @@ class MobilController extends Controller
             'tipe_mobil' => 'required|string|max:255',
             'kapasitas' => 'required|numeric',
             'transmisi' => 'required|string|max:50',
-            'harga_per_hari' => 'required|numeric',
             'deskripsi' => 'nullable|string',
             'gambar' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
@@ -74,7 +73,6 @@ class MobilController extends Controller
             'tipe_mobil' => $request->tipe_mobil,
             'kapasitas' => $request->kapasitas,
             'transmisi' => $request->transmisi,
-            'harga_per_hari' => $request->harga_per_hari,
             'deskripsi' => $request->deskripsi,
         ];
 
