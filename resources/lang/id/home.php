@@ -10,7 +10,8 @@ return [
     'dropdown_vision' => 'Visi & Misi',
     'dropdown_partnership' => 'Kerjasama Kami',
     'navbar_contact' => 'Kontak',
-    
+    'navbar_blogs' => 'Blog',
+
     // hero section
     'hero_title' => 'MITRA TRANSPORTASI TERPERCAYA',
     'hero_desc' => 'Berkah Putra Putri Karawang adalah perusahaan penyedia
@@ -23,7 +24,7 @@ return [
                     yang profesional, Berkah Putra Putri Karawang berkomitmen
                     memberikan pelayanan terbaik untuk mendukung kelancaran
                     mobilitas tenaga kerja perusahaan Anda.',
-                
+
     'cta' => 'Lihat Daftar Mobil',
 
 
@@ -43,21 +44,21 @@ return [
     'capacity' => 'Kapasitas',
 
 
- // Why Us
+    // Why Us
     'why_us' => 'Mengapa Memilih Kami',
     'p_why_us' => 'Kami hadir sebagai solusi transportasi antar jemput karyawan yang profesional, aman, dan terpercaya.',
 
     'why_1_title' => 'Berpengalaman 10+ Tahun',
-    'why_1_desc'  => 'Kami telah dipercaya menangani layanan antar jemput karyawan selama lebih dari 10 tahun oleh berbagai perusahaan industri.',
+    'why_1_desc' => 'Kami telah dipercaya menangani layanan antar jemput karyawan selama lebih dari 10 tahun oleh berbagai perusahaan industri.',
 
     'why_2_title' => 'Kontrak Resmi & Transparan',
-    'why_2_desc'  => 'Seluruh kerja sama dilengkapi kontrak resmi dengan perhitungan biaya yang jelas dan transparan.',
+    'why_2_desc' => 'Seluruh kerja sama dilengkapi kontrak resmi dengan perhitungan biaya yang jelas dan transparan.',
 
     'why_3_title' => 'Harga Berdasarkan Jarak Tempuh',
-    'why_3_desc'  => 'Perhitungan biaya berdasarkan jarak perjalanan, bukan jumlah penumpang, sehingga lebih adil dan efisien.',
+    'why_3_desc' => 'Perhitungan biaya berdasarkan jarak perjalanan, bukan jumlah penumpang, sehingga lebih adil dan efisien.',
 
     'why_4_title' => 'Aman & Profesional',
-    'why_4_desc'  => 'Armada terawat, pengemudi berpengalaman, serta komitmen tinggi terhadap keselamatan dan ketepatan waktu.',
+    'why_4_desc' => 'Armada terawat, pengemudi berpengalaman, serta komitmen tinggi terhadap keselamatan dan ketepatan waktu.',
 
 
 
@@ -72,6 +73,10 @@ return [
     // section mobil
     'vehicles' => 'Estimasi Harga Mobil',
     'estimate_btn' => 'Estimasi Harga',
+
+    // section blog
+    'blogs' => 'Blog Perusahaan',
+    'p_blogs' => 'Berita dan pembaruan terbaru tentang aktivitas perusahaan kami.',
 
     // section kontak
     'contact' => 'Hubungi Kami!',
