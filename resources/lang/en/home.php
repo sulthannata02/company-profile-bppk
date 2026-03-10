@@ -11,7 +11,8 @@ return [
     'dropdown_vision' => 'Vision & Mission',
     'dropdown_partnership' => 'Our Partnerships',
     'navbar_contact' => 'Contact',
-    
+    'navbar_blogs' => 'Blogs',
+
     // hero section
     'hero_title' => 'YOUR TRUSTED TRANSPORTATION PARTNER',
     'hero_desc' => 'Berkah Putra Putri Karawang is a transportation service provider specializing in employee pick-up and drop-off services. We are a trusted partner for various companies seeking safe, timely, and efficient daily transportation solutions for their employees. With a well-maintained fleet of vehicles, experienced drivers, and a professional operational system, Berkah Putra Putri Karawang is committed to providing the best service to support the smooth mobility of your companys.',
@@ -27,21 +28,21 @@ return [
     // section mobil
     'capacity' => 'Capacity',
 
-// Why Us
+    // Why Us
     'why_us' => 'Why Choose Us',
     'p_why_us' => 'We provide professional, safe, and reliable employee shuttle transportation services.',
 
     'why_1_title' => '10+ Years of Experience',
-    'why_1_desc'  => 'We have been trusted for over 10 years to manage employee transportation services for industrial companies.',
+    'why_1_desc' => 'We have been trusted for over 10 years to manage employee transportation services for industrial companies.',
 
     'why_2_title' => 'Official & Transparent Contract',
-    'why_2_desc'  => 'All partnerships are supported by official contracts with clear and transparent cost calculations.',
+    'why_2_desc' => 'All partnerships are supported by official contracts with clear and transparent cost calculations.',
 
     'why_3_title' => 'Distance-Based Pricing',
-    'why_3_desc'  => 'Pricing is calculated based on travel distance, not the number of passengers, making it fair and efficient.',
+    'why_3_desc' => 'Pricing is calculated based on travel distance, not the number of passengers, making it fair and efficient.',
 
     'why_4_title' => 'Safe & Professional',
-    'why_4_desc'  => 'Well-maintained vehicles, experienced drivers, and strong commitment to safety and punctuality.',
+    'why_4_desc' => 'Well-maintained vehicles, experienced drivers, and strong commitment to safety and punctuality.',
 
 
 
@@ -52,6 +53,12 @@ return [
     // section mobil
     'vehicles' => 'Vehicle Price Estimation',
     'estimate_btn' => 'Estimate Price',
+
+    // section blogs
+
+    'blogs' => 'Company Blogs',
+    'p_blogs' => 'Latest news and updates about our company activities.',
+
 
 
 
