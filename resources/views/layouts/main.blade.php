@@ -143,43 +143,41 @@
                         </a>
                     </li>
 
+                    <li class="flex items-center justify-center gap-4 py-4 md:py-0 md:ml-4">
+                        <a href="/login"
+                            class="flex items-center gap-2 px-4 py-2 rounded-md bg-white text-blue-700 font-semibold hover:bg-gray-100 transition text-sm shadow">
+                            <i class="fa-solid fa-user-shield"></i>
+                            Admin
+                        </a>
+
+                        <div class="relative group">
+                            <!-- Switch Language Button -->
+                            <button
+                                class="flex items-center gap-2 px-4 py-2 rounded-md bg-white/10 hover:bg-white/20 transition text-sm font-semibold">
+                                🌐
+                                <span class="uppercase">{{ $currentLocale }}</span>
+                                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+
+                            <!-- Dropdown Language -->
+                            <div
+                                class="absolute right-0 mt-2 w-32 bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                <a href="{{ route('lang.switch', 'id') }}"
+                                    class="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 transition {{ $currentLocale === 'id' ? 'font-bold text-blue-600' : '' }}">
+                                    Indonesia
+                                </a>
+
+                                <a href="{{ route('lang.switch', 'en') }}"
+                                    class="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 transition {{ $currentLocale === 'en' ? 'font-bold text-blue-600' : '' }}">
+                                    English
+                                </a>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
-                <!-- Admin Login Button -->
-                <div class="ml-4 flex items-center">
-                    <a href="/login"
-                        class="flex items-center gap-2 px-4 py-2 rounded-md bg-white text-blue-700 font-semibold hover:bg-gray-100 transition text-sm shadow">
-                        <i class="fa-solid fa-user-shield"></i>
-                        Admin
-                    </a>
-                </div>
-
-
-                <div class="relative group ml-4">
-                    <!-- Switch Language Button -->
-                    <button
-                        class="flex items-center gap-2 px-4 py-2 rounded-md bg-white/10 hover:bg-white/20 transition text-sm font-semibold">
-                        🌐
-                        <span class="uppercase">{{ $currentLocale }}</span>
-                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-
-                    <!-- Dropdown Language -->
-                    <div
-                        class="absolute right-0 mt-2 w-32 bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                        <a href="{{ route('lang.switch', 'id') }}"
-                            class="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 transition {{ $currentLocale === 'id' ? 'font-bold text-blue-600' : '' }}">
-                            Indonesia
-                        </a>
-
-                        <a href="{{ route('lang.switch', 'en') }}"
-                            class="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 transition {{ $currentLocale === 'en' ? 'font-bold text-blue-600' : '' }}">
-                            English
-                        </a>
-                    </div>
-                </div>
             </nav>
         </div>
     </header>
