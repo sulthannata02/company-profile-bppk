@@ -84,6 +84,25 @@
             </a>
         </li>
 
+        <hr class="sidebar-divider">
+        <div class="sidebar-heading">CMS & Konten</div>
+
+        <li class="nav-item">
+            <a class="nav-link {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}"
+               href="{{ route('admin.settings.index') }}">
+                <i class="fa-solid fa-file-pen"></i>
+                <span>Kelola CMS</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link {{ request()->routeIs('admin.partner.*') ? 'active' : '' }}"
+               href="{{ route('admin.partner.index') }}">
+                <i class="fa-solid fa-handshake"></i>
+                <span>Kelola Partner</span>
+            </a>
+        </li>
+
         <hr class="sidebar-divider d-none d-md-block">
 
         <div class="text-center d-none d-md-inline">

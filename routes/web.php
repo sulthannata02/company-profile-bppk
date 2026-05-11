@@ -43,4 +43,10 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('mobil', MobilController::class)->except(['create', 'edit']);
     Route::resource('blog', BlogController::class)->except(['create', 'edit']);
+    
+    // CMS Settings (Full CRUD)
+    Route::resource('settings', \App\Http\Controllers\Admin\SettingController::class);
+    
+    // Partners
+    Route::resource('partner', \App\Http\Controllers\Admin\PartnerController::class)->except(['create', 'edit']);
 });

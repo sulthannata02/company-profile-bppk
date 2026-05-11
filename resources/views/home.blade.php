@@ -15,11 +15,11 @@
             <!-- Overlay Text -->
             <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-6 fade-in">
                 <h2 class="text-4xl font-bold mb-4 text-yellow-400" data-aos="fade-up">
-                    {{ __('home.hero_title') }}
+                    {{ setting('hero_title', __('home.hero_title')) }}
                 </h2>
 
                 <p class="text-lg max-w-4xl mb-8" data-aos="fade-up">
-                    {{ __('home.hero_desc') }}
+                    {{ setting('hero_desc', __('home.hero_desc')) }}
                 </p>
 
                 <a href="#daftar-mobil"
@@ -53,7 +53,7 @@
                     </h3>
 
                     <p class="text-gray-600 text-center leading-relaxed">
-                        {{ __('home.isi_vision') }}
+                        {{ setting('vision_text', __('home.isi_vision')) }}
                     </p>
                 </div>
 
@@ -70,7 +70,7 @@
                     </h3>
 
                     <p class="text-gray-600 text-center leading-relaxed">
-                        {{ __('home.isi_mission') }}
+                        {{ setting('mission_text', __('home.isi_mission')) }}
                     </p>
                 </div>
             </div>
@@ -86,7 +86,7 @@
                     {{ __('home.why_us') }}
                 </h2>
                 <p class="max-w-3xl mx-auto text-gray-600" data-aos="fade-up" data-aos-delay="100">
-                    {{ __('home.p_why_us') }}
+                    {{ setting('why_us_desc', __('home.p_why_us')) }}
                 </p>
             </div>
 
@@ -174,89 +174,43 @@
 
             <!-- Partner List -->
             <div class="space-y-16">
-                <!-- Partner Item -->
-                <div class="grid md:grid-cols-3 gap-8 items-center">
-                    <!-- Logo -->
-                    <div class="flex justify-center md:justify-start">
-                        <img src="/assets/partner/logo-astra.png" alt="PT Astra Nippon Gasket Indonesia"
-                            class="h-20 object-contain" data-aos="fade-right" data-aos-duration="1500"
-                            data-aos-offset="50" />
+                @foreach($partners as $partner)
+                    <!-- Partner Item -->
+                    <div class="grid md:grid-cols-3 gap-8 items-center">
+                        <!-- Logo -->
+                        <div class="flex justify-center md:justify-start">
+                            <img src="{{ asset('assets/partner/' . $partner->logo) }}" alt="{{ $partner->name }}"
+                                class="h-20 object-contain" data-aos="fade-right" data-aos-duration="1500"
+                                data-aos-offset="50" />
+                        </div>
+
+                        <!-- Info -->
+                        <div class="md:col-span-2">
+                            <h3 class="text-xl font-semibold text-gray-800" data-aos="fade-right" data-aos-duration="1000"
+                                data-aos-offset="50">
+                                @if($partner->link)
+                                    <a href="{{ $partner->link }}" target="_blank" rel="noopener noreferrer"
+                                        class="link-underline hover:text-blue-600 transition">
+                                        {{ $partner->name }}
+                                    </a>
+                                @else
+                                    {{ $partner->name }}
+                                @endif
+                            </h3>
+
+                            @if($partner->address)
+                                <p class="mt-2 text-gray-600 leading-relaxed" data-aos="fade-right" data-aos-duration="1000"
+                                    data-aos-offset="50">
+                                    {{ $partner->address }}
+                                </p>
+                            @endif
+                        </div>
                     </div>
-
-                    <!-- Info -->
-                    <div class="md:col-span-2">
-                        <h3 class="text-xl font-semibold text-gray-800" data-aos="fade-right" data-aos-duration="1000"
-                            data-aos-offset="50">
-                            <a href="http://www.angi.co.id/" target="_blank" rel="noopener noreferrer"
-                                class="link-underline hover:text-blue-600 transition">
-                                PT Astra Nippon Gasket Indonesia
-                            </a>
-                        </h3>
-
-                        <p class="mt-2 text-gray-600 leading-relaxed" data-aos="fade-right" data-aos-duration="1000"
-                            data-aos-offset="50">
-                            Karawang International Industrial City (KIIC), Jl.
-                            Maligi III, Lot. N-1 Karawang Barat, Karawang 41361,
-                            Jawa Barat, Indonesia.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Divider -->
-                <div class="border-t"></div>
-
-                <!-- Partner Item -->
-                <div class="grid md:grid-cols-3 gap-8 items-center">
-                    <div class="flex justify-center md:justify-start">
-                        <img src="/assets/partner/logo-meiji.png" alt="PT Meiji Rubber Indonesia"
-                            class="h-20 object-contain" data-aos="fade-right" data-aos-duration="1500"
-                            data-aos-offset="50" />
-                    </div>
-
-                    <div class="md:col-span-2">
-                        <h3 class="text-xl font-semibold text-gray-800" data-aos="fade-right" data-aos-duration="1000"
-                            data-aos-offset="50">
-                            <a href="https://www.meiji.co.id/id" target="_blank" rel="noopener noreferrer"
-                                class="link-underline hover:text-blue-600 transition">
-                                PT Meiji Food Indonesia
-                            </a>
-                        </h3>
-                        <p class="mt-2 text-gray-600 leading-relaxed" data-aos="fade-right" data-aos-duration="1000"
-                            data-aos-offset="50">
-                            Karawang International Industrial City (KIIC) Jl.
-                            Maligi III No.Desa Lot J-2B, Karawang Barat, Jawa
-                            Barat 41361, Indonesia.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Divider -->
-                <div class="border-t"></div>
-
-                <!-- Partner Item -->
-                <div class="grid md:grid-cols-3 gap-8 items-center">
-                    <div class="flex justify-center md:justify-start">
-                        <img src="/assets/partner/logo-sango.png" alt="PT Sango Ceramics Indonesia"
-                            class="h-20 object-contain" data-aos="fade-right" data-aos-duration="1500"
-                            data-aos-offset="50" />
-                    </div>
-
-                    <div class="md:col-span-2">
-                        <h3 class="text-xl font-semibold text-gray-800" data-aos="fade-right" data-aos-duration="1000"
-                            data-aos-offset="50">
-                            <a href="https://sango-sti.com/sango-indonesia.php" target="_blank" rel="noopener noreferrer"
-                                class="link-underline hover:text-blue-600 transition">
-                                PT Sango Indonesia
-                            </a>
-                        </h3>
-                        <p class="mt-2 text-gray-600 leading-relaxed" data-aos="fade-right" data-aos-duration="1000"
-                            data-aos-offset="50">
-                            Kawasan Industri Mitra Karawang (KIM) Mitra Selatan
-                            IV BLOK M1-2, Desa Parungmulya,Kacamatan Ciampel,
-                            Karawang 41361 Jawa Barat - Indonesia
-                        </p>
-                    </div>
-                </div>
+                    @if(!$loop->last)
+                        <!-- Divider -->
+                        <div class="border-t"></div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </section>
@@ -397,9 +351,9 @@
                             <p class="text-gray-500 text-sm">
                                 {{ __('home.email') }}
                             </p>
-                            <a href="mailto:ptbppkkarawang@gmail.com"
+                            <a href="mailto:{{ setting('contact_email', 'ptbppkkarawang@gmail.com') }}"
                                 class="font-semibold link-underline hover:text-blue-600 transition">
-                                ptbppkkarawang@gmail.com
+                                {{ setting('contact_email', 'ptbppkkarawang@gmail.com') }}
                             </a>
                         </div>
                     </div>
@@ -436,9 +390,7 @@
                                 {{ __('home.address') }}
                             </p>
                             <p class="font-semibold text-gray-800">
-                                Dusun Ciherang RT 001 / RW 005, Desa Wadas,
-                                <br />
-                                Telukjambe Timur, Karawang – Jawa Barat
+                                {!! nl2br(e(setting('contact_address', "Dusun Ciherang RT 001 / RW 005, Desa Wadas,\nTelukjambe Timur, Karawang – Jawa Barat"))) !!}
                             </p>
                         </div>
                     </div>
@@ -455,7 +407,7 @@
                     <!-- Map -->
                     <div class="rounded-xl overflow-hidden shadow-md">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.3652631196103!2d107.27806536303126!3d-6.334269631478037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699d3e43d1f6eb%3A0xc49a90c0eb120575!2sKantor%20Sekretariat%20RW.05!5e0!3m2!1sid!2sid!4v1765394489452!5m2!1sid!2sid"
+                            src="{{ setting('google_maps_iframe', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.3652631196103!2d107.27806536303126!3d-6.334269631478037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699d3e43d1f6eb%3A0xc49a90c0eb120575!2sKantor%20Sekretariat%20RW.05!5e0!3m2!1sid!2sid!4v1765394489452!5m2!1sid!2sid') }}"
                             width="100%" height="400" style="border: 0" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>

@@ -9,13 +9,15 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $mobils = DB::table('mobils')->get();
+        $mobils = \App\Models\Mobil::all();
 
         $blogs = Blog::where('status', 'publish')
             ->latest()
             ->limit(3)
             ->get();
 
-        return view('home', compact('mobils', 'blogs'));
+        $partners = \App\Models\Partner::orderBy('order')->get();
+
+        return view('home', compact('mobils', 'blogs', 'partners'));
     }
 }
