@@ -56,8 +56,8 @@ return [
 
     // section blogs
 
-    'blogs' => 'Company Blogs',
-    'p_blogs' => 'Latest news and updates about our company activities.',
+    'blogs' => 'News & Updates',
+    'p_blogs' => 'The latest news and updates about our services, transportation tips, and other interesting information.',
 
 
 
@@ -71,5 +71,20 @@ return [
     'address' => 'Company Address',
 
     // section maps
-    'our_location' => 'Our Location on Google Maps'
+    'our_location' => 'Our Location on Google Maps',
+
+    // estimasi harga
+    'estimation_title' => 'Pickup & Drop-off Cost Estimation',
+    'estimation_form_title' => 'Cost Estimation Form',
+    'estimation_form_desc' => 'Calculate cost based on route and vehicle type',
+    'car_type' => 'Car Type',
+    'passengers' => 'Passengers',
+    'pickup_location' => 'Pickup Location',
+    'destination' => 'Destination',
+    'choose_pickup' => '-- Choose Pickup Location --',
+    'choose_destination' => '-- Choose Destination --',
+    'calculate_estimation' => 'Calculate Estimation',
+    'distance' => 'Distance',
+    'price_estimation' => 'Estimated Cost',
+    'estimation_note' => 'This is only a cost estimation. Final price may vary depending on actual conditions.',
 ];
