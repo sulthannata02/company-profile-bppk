@@ -75,8 +75,8 @@ return [
     'estimate_btn' => 'Estimasi Harga',
 
     // section blog
-    'blogs' => 'Blog Perusahaan',
-    'p_blogs' => 'Berita dan pembaruan terbaru tentang aktivitas perusahaan kami.',
+    'blogs' => 'Berita & Pembaruan',
+    'p_blogs' => 'Berita dan pembaruan terbaru seputar layanan kami, tips transportasi, dan informasi menarik lainnya.',
 
     // section kontak
     'contact' => 'Hubungi Kami!',
@@ -88,4 +88,20 @@ return [
 
     // section maps
     'our_location' => 'Lokasi Kami di Google Maps',
+
+
+    // Estimasi Harga
+    'estimation_title' => 'Estimasi Biaya Antar Jemput',
+    'estimation_form_title' => 'Form Estimasi Biaya',
+    'estimation_form_desc' => 'Hitung biaya berdasarkan rute dan jenis mobil',
+    'car_type' => 'Tipe Mobil',
+    'passengers' => 'Penumpang',
+    'pickup_location' => 'Lokasi Jemput',
+    'destination' => 'Lokasi Tujuan',
+    'choose_pickup' => '-- Pilih Lokasi Jemput --',
+    'choose_destination' => '-- Pilih Lokasi Tujuan --',
+    'calculate_estimation' => 'Hitung Estimasi',
+    'distance' => 'Jarak',
+    'price_estimation' => 'Estimasi Biaya',
+    'estimation_note' => 'Ini hanya estimasi biaya. Harga akhir dapat berubah sesuai kondisi aktual.',
 ];

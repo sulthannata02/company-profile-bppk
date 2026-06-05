@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\EstimasiController;
+use App\Http\Controllers\ShowBlogController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -22,7 +23,8 @@ Route::get(
 )->name('estimasi.create');
 
 // Detail blog
-Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
+Route::get('/blog/{slug}', [ShowBlogController::class, 'show'])
+    ->name('blog.show');
 
 Route::post(
     '/estimasi/{mobil}',
