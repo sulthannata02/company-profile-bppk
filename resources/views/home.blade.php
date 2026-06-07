@@ -300,10 +300,7 @@
                                         Seats
                                     </p>
 
-                                    <a href="{{ route('estimasi.create', $mobil->id) }}"
-                                        class="inline-block w-full text-center bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition">
-                                        {{ __('home.estimate_btn') }}
-                                    </a>
+
                                 </div>
                             </div>
                         </div>
@@ -316,6 +313,83 @@
 
                 <!-- Pagination -->
                 <div class="swiper-pagination mt-6"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kebutuhan Anda -->
+    <section id="kebutuhan-anda" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+
+            <!-- Heading -->
+            <div class="text-center mb-14" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-blue-700 mb-4">
+                    {{ __('home.kebutuhan_anda') }}
+                </h2>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    {{ __('home.kebutuhan_desc') }}
+                </p>
+            </div>
+
+            <!-- Cards -->
+            <div class="grid md:grid-cols-2 gap-8">
+
+                <!-- Drop Off Karyawan -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition"
+                    data-aos="fade-right">
+
+                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-blue-100 mb-6">
+                        <i class="fas fa-users text-blue-600 text-2xl"></i>
+                    </div>
+
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">
+                        Antar Jemput / Drop Off Karyawan
+                    </h3>
+
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        PT Berkah Putra Putri Karawang menyediakan layanan transportasi
+                        karyawan untuk perusahaan dengan armada yang terawat, jadwal yang
+                        terorganisir, serta pengemudi yang berpengalaman. Layanan ini
+                        membantu perusahaan memastikan karyawan dapat berangkat dan pulang
+                        dengan aman, nyaman, dan tepat waktu setiap hari.
+                    </p>
+
+                    <a href="mailto:ptbppkkarawang@gmail.com?subject=Permintaan%20Layanan%20Transportasi%20Karyawan"
+                        class="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                        <i class="fas fa-envelope"></i>
+                        Hubungi Kami
+                    </a>
+
+                </div>
+
+                <!-- Pariwisata -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition"
+                    data-aos="fade-left">
+
+                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-green-100 mb-6">
+                        <i class="fas fa-bus text-green-600 text-2xl"></i>
+                    </div>
+
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">
+                        Pariwisata
+                    </h3>
+
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Kami juga melayani kebutuhan perjalanan wisata untuk keluarga,
+                        instansi, sekolah, maupun perusahaan. Dengan armada yang nyaman
+                        dan kapasitas yang beragam, perjalanan wisata menjadi lebih
+                        menyenangkan, aman, dan efisien untuk berbagai destinasi di dalam
+                        maupun luar kota.
+                    </p>
+
+                    <a href="{{ route('estimasi-harga-pariwisata') }}"
+                        class="inline-flex items-center gap-2 bg-green-600 text-white px-5 py-3 rounded-lg font-semibold hover:bg-green-700 transition">
+                        <i class="fas fa-calculator"></i>
+                        Estimasi Harga
+                    </a>
+
+                </div>
+
             </div>
         </div>
     </section>

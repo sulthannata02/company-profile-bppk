@@ -71,8 +71,14 @@ return [
 
 
     // section mobil
-    'vehicles' => 'Estimasi Harga Mobil',
+    'vehicles' => 'Armada Perusahaan Kami',
     'estimate_btn' => 'Estimasi Harga',
+
+    // Section Kebutuhan
+    'kebutuhan_anda' => 'Kebutuhan Anda',
+    'kebutuhan_desc' => 'Kami menyediakan layanan transportasi yang fleksibel untuk berbagai kebutuhan,
+                    mulai dari antar jemput karyawan perusahaan hingga perjalanan wisata yang nyaman
+                    dan aman.',
 
     // section blog
     'blogs' => 'Berita & Pembaruan',

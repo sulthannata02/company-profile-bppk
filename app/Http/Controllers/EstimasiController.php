@@ -3,65 +3,58 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mobil;
-use App\Models\Rute;
-use App\Helpers\DistanceHelper;
+use App\Models\TarifWisata;
+use App\Models\TujuanWisata;
 use Illuminate\Http\Request;
 
 class EstimasiController extends Controller
 {
     /**
-     * Menampilkan form estimasi biaya
+     * Load data form estimasi
      */
-    public function create($mobilId)
+    public function index()
     {
-        $mobil = Mobil::findOrFail($mobilId);
-
-        $lokasiJemput = Rute::whereIn('tipe', ['jemput', 'keduanya'])->get();
-        $lokasiTujuan = Rute::whereIn('tipe', ['tujuan', 'keduanya'])->get();
-
-        return view('estimasi.create', compact(
-            'mobil',
-            'lokasiJemput',
-            'lokasiTujuan'
-        ));
+        return view('estimasi.estimasi-harga-pariwisata', [
+            'mobils' => Mobil::all(),
+            'tujuans' => TujuanWisata::all(),
+        ]);
     }
 
     /**
-     * Menghitung estimasi biaya
+     * Proses hitung estimasi harga
      */
-    public function calculate(Request $request, $mobilId)
+    public function hitung(Request $request)
     {
+        // 1. VALIDASI
         $request->validate([
-            'lokasi_jemput' => 'required|exists:rute,id',
-            'lokasi_tujuan' => 'required|exists:rute,id',
+            'mobil_id' => 'required|exists:mobils,id',
+            'tujuan_id' => 'required|exists:tujuan_wisatas,id',
         ]);
 
-        $mobil = Mobil::findOrFail($mobilId);
-        $jemput = Rute::findOrFail($request->lokasi_jemput);
-        $tujuan = Rute::findOrFail($request->lokasi_tujuan);
+        // 2. AMBIL DATA MOBIL & TUJUAN
+        $mobil = Mobil::findOrFail($request->mobil_id);
+        $tujuan = TujuanWisata::findOrFail($request->tujuan_id);
 
-        // Hitung jarak (KM)
-        $jarak = DistanceHelper::calculate(
-            $jemput->latitude,
-            $jemput->longitude,
-            $tujuan->latitude,
-            $tujuan->longitude
-        );
+        // 3. AMBIL TARIF MOBIL
+        $tarif = TarifWisata::where('mobil_id', $mobil->id)->first();
 
-        /**
-         * LOGIKA TARIF
-         */
-        $tarifPerKm = match (strtolower($mobil->tipe_mobil)) {
-            'avanza' => 6000,
-            'hiace'  => 8500,
-            default  => 6000,
-        };
+        // 4. HANDLE JIKA TARIF TIDAK ADA
+        if (!$tarif) {
+            return back()
+                ->withInput()
+                ->with('error', 'Tarif mobil belum tersedia.');
+        }
 
-        $estimasiHarga = round($jarak * $tarifPerKm);
+        // 5. HITUNG HARGA
+        $harga = round($tarif->tarif_per_km * $tujuan->jarak_km);
 
-        return back()->with('hasil', [
-            'jarak' => round($jarak, 2),
-            'harga' => $estimasiHarga,
+        // 6. RELOAD DATA UNTUK VIEW
+        return view('estimasi.estimasi-harga-pariwisata', [
+            'mobils' => Mobil::all(),
+            'tujuans' => TujuanWisata::all(),
+            'mobil' => $mobil,
+            'tujuan' => $tujuan,
+            'harga' => $harga,
         ]);
     }
 }

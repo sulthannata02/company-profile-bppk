@@ -10,6 +10,7 @@ use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\EstimasiController;
 use App\Http\Controllers\ShowBlogController;
 
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // Ganti bahasa
@@ -17,19 +18,19 @@ Route::get('/lang/{locale}', [LanguageController::class, 'switch'])
     ->name('lang.switch');
 
 // Estimasi harga
-Route::get(
-    '/estimasi/{mobil}',
-    [EstimasiController::class, 'create']
-)->name('estimasi.create');
+Route::get('/estimasi-harga-pariwisata', function () {
+    return view('estimasi-harga-pariwisata');
+})->name('estimasi-harga-pariwisata');
+
+Route::get('/estimasi-harga-pariwisata', [EstimasiController::class, 'index'])
+    ->name('estimasi-harga-pariwisata');
+Route::post('/estimasi-harga-pariwisata/hitung', [EstimasiController::class, 'hitung'])
+    ->name('estimasi-harga-pariwisata.hitung');
 
 // Detail blog
 Route::get('/blog/{slug}', [ShowBlogController::class, 'show'])
     ->name('blog.show');
 
-Route::post(
-    '/estimasi/{mobil}',
-    [EstimasiController::class, 'calculate']
-)->name('estimasi.hitung');
 
 
 Route::view('/login', 'login');

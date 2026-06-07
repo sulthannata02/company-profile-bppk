@@ -45,22 +45,24 @@ return [
     'why_4_desc' => 'Well-maintained vehicles, experienced drivers, and strong commitment to safety and punctuality.',
 
 
+    // Section Kebutuhan
+    'kebutuhan_anda' => 'Your Necessary',
+    'kebutuhan_desc' => 'We provide flexible transportation services for a variety of needs,
+from company employee pick-ups to comfortable and safe tourist trips.',
+
 
     // section kerjasama
     'partnership' => 'Our Partnerships',
     'p_partnership' => 'PT Berkah Putra Putri Karawang has been trusted to collaborate with several companies in providing employee transportation services.',
 
     // section mobil
-    'vehicles' => 'Vehicle Price Estimation',
+    'vehicles' => 'Our Company Vehicles',
     'estimate_btn' => 'Estimate Price',
 
-    // section blogs
 
+    // section blogs
     'blogs' => 'News & Updates',
     'p_blogs' => 'The latest news and updates about our services, transportation tips, and other interesting information.',
-
-
-
 
     // section kontak
     'contact' => 'Contact Us!',

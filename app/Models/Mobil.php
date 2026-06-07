@@ -9,7 +9,7 @@ class Mobil extends Model
 {
     use HasFactory;
 
-    protected $table = 'mobils'; // sesuai tabel migration
+    protected $table = 'mobils';
 
     protected $fillable = [
         'nama_mobil',
@@ -20,4 +20,8 @@ class Mobil extends Model
         'gambar',
     ];
 
+    public function tarifPariwisata()
+    {
+        return $this->hasOne(TarifWisata::class);
+    }
 }
