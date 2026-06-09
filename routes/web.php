@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\EstimasiController;
 use App\Http\Controllers\ShowBlogController;
+use App\Http\Controllers\Admin\PartnerController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -46,4 +47,5 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('mobil', MobilController::class)->except(['create', 'edit']);
     Route::resource('blog', BlogController::class)->except(['create', 'edit']);
+    Route::resource('partner', PartnerController::class)->except(['create', 'edit']);
 });

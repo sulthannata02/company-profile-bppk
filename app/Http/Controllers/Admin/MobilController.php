@@ -15,7 +15,7 @@ class MobilController extends Controller
     public function index()
     {
         $mobils = Mobil::latest()->get();
-        return view('admin.mobil', compact('mobils'));  // ← sesuaikan nama file view
+        return view('admin.mobil.index', compact('mobils'));  // ← sesuaikan nama file view
     }
 
 

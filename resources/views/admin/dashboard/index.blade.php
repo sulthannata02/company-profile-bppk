@@ -69,6 +69,29 @@
                 </div>
             </div>
 
+            {{-- TOTAL PARTNER --}}
+            <div class="col-12 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body px-4">
+                        <div class="row align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                    Total Mitra
+                                </div>
+
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                    {{ $totalPartner }}
+                                </div>
+                            </div>
+
+                            <div class="col-auto">
+                                <i class="fa-solid fa-handshake fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>
@@ -82,41 +105,46 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const ctx = document.getElementById('dashboardChart');
+    document.addEventListener("DOMContentLoaded", function() {
+        const ctx = document.getElementById('dashboardChart');
 
-    if (!ctx) return;
+        if (!ctx) return;
 
-    new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: ['Mobil', 'Blog'],
-            datasets: [{
-                data: [
-                    {{ $totalMobil }},
-                    {{ $totalBlog }}
-                ],
-                backgroundColor: [
-                    '#4e73df',
-                    '#36b9cc'
-                ],
-                hoverBackgroundColor: [
-                    '#2e59d9',
-                    '#2c9faf'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'bottom'
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Mobil', 'Blog', 'Mitra'],
+                datasets: [{
+                    data: [
+                        
+                        {{$totalMobil}},
+                        {{$totalBlog}},
+                        {{$totalPartner}}
+
+                    ],
+                    backgroundColor: [
+                        '#4e73df',
+                        '#36b9cc',
+                        '#1cc88a'
+                    ],
+                    hoverBackgroundColor: [
+                        '#2e59d9',
+                        '#2c9faf',
+                        '#17a673'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
                 }
             }
-        }
+        });
     });
-});
 </script>
 @endpush
