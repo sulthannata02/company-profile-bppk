@@ -174,91 +174,57 @@
 
             <!-- Partner List -->
             <div class="space-y-16">
-                <!-- Partner Item -->
-                <div class="grid md:grid-cols-3 gap-8 items-center">
-                    <!-- Logo -->
-                    <div class="flex justify-center md:justify-start">
-                        <img src="/assets/partner/logo-astra.png" alt="PT Astra Nippon Gasket Indonesia"
-                            class="h-20 object-contain" data-aos="fade-right" data-aos-duration="1500"
-                            data-aos-offset="50" />
-                    </div>
 
-                    <!-- Info -->
-                    <div class="md:col-span-2">
-                        <h3 class="text-xl font-semibold text-gray-800" data-aos="fade-right" data-aos-duration="1000"
-                            data-aos-offset="50">
-                            <a href="http://www.angi.co.id/" target="_blank" rel="noopener noreferrer"
-                                class="link-underline hover:text-blue-600 transition">
-                                PT Astra Nippon Gasket Indonesia
-                            </a>
-                        </h3>
+    @forelse ($partners as $partner)
 
-                        <p class="mt-2 text-gray-600 leading-relaxed" data-aos="fade-right" data-aos-duration="1000"
-                            data-aos-offset="50">
-                            Karawang International Industrial City (KIIC), Jl.
-                            Maligi III, Lot. N-1 Karawang Barat, Karawang 41361,
-                            Jawa Barat, Indonesia.
-                        </p>
-                    </div>
-                </div>
+        <div class="grid md:grid-cols-3 gap-8 items-center">
 
-                <!-- Divider -->
-                <div class="border-t"></div>
-
-                <!-- Partner Item -->
-                <div class="grid md:grid-cols-3 gap-8 items-center">
-                    <div class="flex justify-center md:justify-start">
-                        <img src="/assets/partner/logo-meiji.png" alt="PT Meiji Rubber Indonesia"
-                            class="h-20 object-contain" data-aos="fade-right" data-aos-duration="1500"
-                            data-aos-offset="50" />
-                    </div>
-
-                    <div class="md:col-span-2">
-                        <h3 class="text-xl font-semibold text-gray-800" data-aos="fade-right" data-aos-duration="1000"
-                            data-aos-offset="50">
-                            <a href="https://www.meiji.co.id/id" target="_blank" rel="noopener noreferrer"
-                                class="link-underline hover:text-blue-600 transition">
-                                PT Meiji Food Indonesia
-                            </a>
-                        </h3>
-                        <p class="mt-2 text-gray-600 leading-relaxed" data-aos="fade-right" data-aos-duration="1000"
-                            data-aos-offset="50">
-                            Karawang International Industrial City (KIIC) Jl.
-                            Maligi III No.Desa Lot J-2B, Karawang Barat, Jawa
-                            Barat 41361, Indonesia.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Divider -->
-                <div class="border-t"></div>
-
-                <!-- Partner Item -->
-                <div class="grid md:grid-cols-3 gap-8 items-center">
-                    <div class="flex justify-center md:justify-start">
-                        <img src="/assets/partner/logo-sango.png" alt="PT Sango Ceramics Indonesia"
-                            class="h-20 object-contain" data-aos="fade-right" data-aos-duration="1500"
-                            data-aos-offset="50" />
-                    </div>
-
-                    <div class="md:col-span-2">
-                        <h3 class="text-xl font-semibold text-gray-800" data-aos="fade-right" data-aos-duration="1000"
-                            data-aos-offset="50">
-                            <a href="https://sango-sti.com/sango-indonesia.php" target="_blank" rel="noopener noreferrer"
-                                class="link-underline hover:text-blue-600 transition">
-                                PT Sango Indonesia
-                            </a>
-                        </h3>
-                        <p class="mt-2 text-gray-600 leading-relaxed" data-aos="fade-right" data-aos-duration="1000"
-                            data-aos-offset="50">
-                            Kawasan Industri Mitra Karawang (KIM) Mitra Selatan
-                            IV BLOK M1-2, Desa Parungmulya,Kacamatan Ciampel,
-                            Karawang 41361 Jawa Barat - Indonesia
-                        </p>
-                    </div>
-                </div>
+            <div class="flex justify-center md:justify-start">
+                <img
+                    src="{{ asset('partner/' . $partner->logo) }}"
+                    alt="{{ $partner->name }}"
+                    class="h-20 object-contain">
             </div>
+
+            <div class="md:col-span-2">
+
+                <h3 class="text-xl font-semibold text-gray-800">
+
+                    @if ($partner->website)
+                        <a
+                            href="{{ $partner->website }}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="link-underline hover:text-blue-600 transition">
+                            {{ $partner->name }}
+                        </a>
+                    @else
+                        {{ $partner->name }}
+                    @endif
+
+                </h3>
+
+                <p class="mt-2 text-gray-600 leading-relaxed">
+                    {{ $partner->address }}
+                </p>
+
+            </div>
+
         </div>
+
+        @unless ($loop->last)
+            <div class="border-t"></div>
+        @endunless
+
+    @empty
+
+        <div class="text-center text-gray-500">
+            Belum ada data mitra.
+        </div>
+
+    @endforelse
+
+</div>
     </section>
 
     <!-- Daftar Mobil -->

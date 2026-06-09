@@ -18,6 +18,7 @@ class UserSeeder extends Seeder
             'name' => 'Admin Kobra',
             'email' => 'admin@kobra.com',
             'password' => Hash::make('admin123'), // password default
+            'role' => 'admin',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

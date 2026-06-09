@@ -10,25 +10,25 @@
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h4 class="fw-bold text-primary">Kelola Mobil</h4>
         <button class="btn btn-primary"
-                data-toggle="modal"
-                data-target="#createModal">
+            data-toggle="modal"
+            data-target="#createModal">
             <i class="fa fa-plus mr-1"></i> Tambah Mobil
         </button>
     </div>
 
     {{-- Alert --}}
     @if(session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
+    <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
     @if($errors->any())
-        <div class="alert alert-danger">
-            <ul class="mb-0">
-                @foreach($errors->all() as $err)
-                    <li>{{ $err }}</li>
-                @endforeach
-            </ul>
-        </div>
+    <div class="alert alert-danger">
+        <ul class="mb-0">
+            @foreach($errors->all() as $err)
+            <li>{{ $err }}</li>
+            @endforeach
+        </ul>
+    </div>
     @endif
 
     {{-- Table --}}
@@ -52,7 +52,7 @@
                         <td>{{ $i+1 }}</td>
                         <td>
                             @if($mobil->gambar)
-                                <img src="{{ asset('mobil/'.$mobil->gambar) }}" width="70">
+                            <img src="{{ asset('mobil/'.$mobil->gambar) }}" width="70">
                             @endif
                         </td>
                         <td>
@@ -69,9 +69,9 @@
                             </button>
 
                             <form action="{{ route('admin.mobil.destroy',$mobil->id) }}"
-                                  method="POST"
-                                  class="d-inline"
-                                  onsubmit="return confirm('Hapus mobil ini?')">
+                                method="POST"
+                                class="d-inline"
+                                onsubmit="return confirm('Hapus mobil ini?')">
                                 @csrf @method('DELETE')
                                 <button class="btn btn-danger btn-sm">
                                     <i class="fa fa-trash"></i>
@@ -96,9 +96,9 @@
 <div class="modal fade" id="createModal" tabindex="-1">
     <div class="modal-dialog modal-lg">
         <form action="{{ route('admin.mobil.store') }}"
-              method="POST"
-              enctype="multipart/form-data"
-              class="modal-content">
+            method="POST"
+            enctype="multipart/form-data"
+            class="modal-content">
             @csrf
 
             <div class="modal-header">
@@ -209,20 +209,20 @@
 
 @push('scripts')
 <script>
-function openEdit(id) {
-    fetch(`/admin/mobil/${id}`)
-        .then(res => res.json())
-        .then(data => {
-            $('#edit_nama').val(data.nama_mobil);
-            $('#edit_tipe').val(data.tipe_mobil);
-            $('#edit_kapasitas').val(data.kapasitas);
-            $('#edit_transmisi').val(data.transmisi);
-            $('#edit_harga').val(data.harga_per_hari);
-            $('#edit_deskripsi').val(data.deskripsi);
+    function openEdit(id) {
+        fetch(`/admin/mobil/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                $('#edit_nama').val(data.nama_mobil);
+                $('#edit_tipe').val(data.tipe_mobil);
+                $('#edit_kapasitas').val(data.kapasitas);
+                $('#edit_transmisi').val(data.transmisi);
+                $('#edit_harga').val(data.harga_per_hari);
+                $('#edit_deskripsi').val(data.deskripsi);
 
-            $('#editForm').attr('action', `/admin/mobil/${id}`);
-            $('#editModal').modal('show');
-        });
-}
+                $('#editForm').attr('action', `/admin/mobil/${id}`);
+                $('#editModal').modal('show');
+            });
+    }
 </script>
 @endpush

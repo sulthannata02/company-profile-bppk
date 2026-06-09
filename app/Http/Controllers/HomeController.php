@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use App\Models\Blog;
+use App\Models\Partner;
 
 class HomeController extends Controller
 {
@@ -16,6 +17,10 @@ class HomeController extends Controller
             ->limit(3)
             ->get();
 
-        return view('home', compact('mobils', 'blogs'));
+        $partners = Partner::where('is_active', true)
+            ->orderBy('sort_order')
+            ->get();
+
+        return view('home', compact('mobils', 'blogs', 'partners'));
     }
 }
