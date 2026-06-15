@@ -71,7 +71,7 @@
     </style>
 </head>
 
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 overflow-x-hidden">
     <!-- Header -->
     <header class="bg-gradient-to-r from-blue-700 to-blue-500 text-white shadow-lg sticky top-0 z-50 fade-in">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -117,7 +117,7 @@
 
                         <!-- Dropdown Menu -->
                         <ul
-                            class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            class="md:absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                             <li>
                                 <a href="#visi-misi" class="block px-4 py-2 hover:bg-gray-100 transition">
                                     {{ __('home.dropdown_vision') }}
@@ -168,7 +168,7 @@
 
                     <!-- Dropdown Language -->
                     <div
-                        class="absolute right-0 mt-2 w-32 bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        class="md:absolute right-0 mt-2 w-32 bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                         <a href="{{ route('lang.switch', 'id') }}"
                             class="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 transition {{ $currentLocale === 'id' ? 'font-bold text-blue-600' : '' }}">
                             Indonesia

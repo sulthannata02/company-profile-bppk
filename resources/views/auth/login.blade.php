@@ -12,7 +12,7 @@
     @vite('resources/css/app.css')
 </head>
 
-<body>
+<body class="login-page">
     <div class="background">
         <div class="shape"></div>
         <div class="shape"></div>
