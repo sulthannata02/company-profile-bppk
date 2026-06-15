@@ -421,9 +421,9 @@
     <section id="hubungi-kami" class="bg-gray-100 py-16 fade-in scroll-mt-20">
         <div class="container mx-auto px-6">
             <div class="mt-10"></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mr-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <!-- Informasi Kontak -->
-                <div class="flex flex-col justify-center ml-10" data-aos="fade-right" data-aos-delay="200">
+                <div class="flex flex-col justify-center md:ml-10" data-aos="fade-right" data-aos-delay="200">
                     <h1 class="text-5xl font-bold text-blue-600 mb-8">
                         {{ __('home.contact') }}
                     </h1>
